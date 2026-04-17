@@ -1,0 +1,25 @@
+# Jikan Feature Pipeline
+
+A small Python project that fetches top anime data from the Jikan API, validates the response, builds derived features, and saves the output as JSON.
+
+## Features
+- Fetches top anime data from the Jikan REST API
+- Validates API responses and individual anime records
+- Builds derived features such as score flags, popularity buckets, and genre-based metrics
+- Saves the processed feature records to a JSON file
+
+## Tech Stack
+- Python
+- Requests
+- JSON
+- Pathlib
+
+## Output
+The script generates a `feature_records.json` file containing cleaned and transformed anime feature records.
+
+## Run
+```bash
+python main.py
+```
+
+Created by: [oster-dev](https://github.com/oster-dev)
