@@ -1,4 +1,4 @@
-# Jikan Feature Pipeline 
+Jikan Feature Pipeline 
 
 A Python pipeline that fetches top anime data from the Jikan API, validates records, builds derived ML features, and exports the output as timestamped JSON files — fully containerized with Docker.
 
