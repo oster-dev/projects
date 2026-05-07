@@ -1,0 +1,19 @@
+# Jikan Feature Pipeline 
+
+A Python pipeline that fetches top anime data from the Jikan API, validates records, builds derived ML features, and exports the output as timestamped JSON files — fully containerized with Docker.
+
+## Features
+- Fetches top anime data from the Jikan REST API
+- Validates API responses and individual anime records
+- Builds derived features: score flags, popularity buckets, genre-based metrics
+- Exports timestamped output per run — every run creates a new JSON file
+- Fully containerized with Docker — no local Python setup needed
+
+## Tech Stack
+- Python 3.11
+- Docker
+- Requests
+- JSON / Pathlib
+
+## Output
+Each run generates a timestamped file
