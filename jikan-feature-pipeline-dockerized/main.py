@@ -81,12 +81,10 @@ def validate_anime(anime):
 payload = fetch_top_anime()
 anime_list = validate_response(payload)
 
-validated_anime = []
-
-for anime in anime_list:
-    cleaned = validate_anime(anime)
-    if cleaned is not None:
-        validated_anime.append(cleaned)
+validated_anime = list(filter(
+    lambda x: x is not None,
+    map(validate_anime, anime_list)
+))
 
 print(f"Valid anime records: {len(validated_anime)}")
 if validated_anime:
@@ -134,11 +132,7 @@ def build_feature_record(anime):
 
 
 # Feature Record Layer
-feature_records = []
-
-for anime in validated_anime:
-    feature_record = build_feature_record(anime)
-    feature_records.append(feature_record)
+feature_records = list(map(build_feature_record, validated_anime))
 
 print(f"Feature records: {len(feature_records)}")
 print(feature_records[:3])
