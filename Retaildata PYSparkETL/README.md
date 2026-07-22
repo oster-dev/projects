@@ -11,7 +11,7 @@ According to the roadmap, Month 3 requires a first Spark ETL project in Python o
 The focus here is on learning the Spark workflow itself:
 - Reading a CSV dataset into a Spark DataFrame.
 - Cleaning important fields.
-- Converting the invoice date into a proper timestamp with `to_timestamp()` using the dataset format [cite:1153].
+- Converting the invoice date into a proper timestamp with `to_timestamp()` using the dataset format.
 - Filtering out invalid records such as nulls in critical columns, negative quantities, zero prices, and cancellations.
 - Creating a revenue column and a few time-based columns.
 - Writing cleaned and aggregated outputs back to disk.
@@ -24,8 +24,8 @@ The pipeline reads the online retail dataset, performs basic cleaning, enriches 
 
 - Trims text fields like `InvoiceNo`, `StockCode`, `Description`, and `Country`.
 - Converts `Country` to uppercase for cleaner grouping.
-- Parses `InvoiceDate` with `to_timestamp()` using the original date format from the dataset [cite:1153].
-- Drops rows only when critical columns are missing by using `dropna(subset=...)`, which is more appropriate than blindly dropping every row with any null value [cite:1137].
+- Parses `InvoiceDate` with `to_timestamp()` using the original date format from the dataset.
+- Drops rows only when critical columns are missing by using `dropna(subset=...)`, which is more appropriate than blindly dropping every row with any null value.
 - Removes rows where `Quantity <= 0`.
 - Removes rows where `UnitPrice <= 0`.
 - Removes cancellation rows where `InvoiceNo` starts with `C`.
